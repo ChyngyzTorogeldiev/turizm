@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-jwuytsz0*q+=3e)hcjo8s%*+#6vsw-j8#@s^4!ro#vbtaj*^6='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -81,6 +81,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+   # 'default': {
+      # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'turizm_db',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'postgres',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '5432',
+    # }
+# }
 
 
 # Password validation
