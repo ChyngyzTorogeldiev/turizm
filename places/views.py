@@ -17,8 +17,11 @@ def create_place(request):
     return render(request, 'places/form.html', {'place_form': place_form})
 
 def place(request, id):
-    place_object = Place.objects.get(id=id)
-    return render(request, 'places/place.html', {'place_object': place_object})
+    try:
+        place_object = Place.objects.get(id=id)
+        return render(request, 'places/place.html', {'place_object': place_object})
+    except Place.DoesNotExist as e:
+        return HttpResponse(f'Not found: {e}', status=404) 
 
 def edit_place(request, id):
     place_object = Place.objects.get(id=id)
